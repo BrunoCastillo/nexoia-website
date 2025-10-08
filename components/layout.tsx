@@ -68,7 +68,7 @@ const Navbar = () => {
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
             <a
-              href="https://wa.me/593XXXXXXXXX"
+              href="https://wa.me/593995048253"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors duration-200"
@@ -117,7 +117,7 @@ const Navbar = () => {
               ))}
               <div className="flex flex-col space-y-2 pt-4 border-t border-gray-700">
                 <a
-                  href="https://wa.me/593XXXXXXXXX"
+                  href="https://wa.me/593995048253"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center space-x-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors duration-200"

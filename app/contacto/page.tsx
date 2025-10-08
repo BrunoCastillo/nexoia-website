@@ -48,7 +48,7 @@ const ContactPage = () => {
     {
       icon: Phone,
       title: 'WhatsApp',
-      value: '+593 XXXXXXXXX',
+      value: '+593 99 504 8253',
       description: 'Respuesta inmediata disponible'
     },
     {
@@ -224,7 +224,7 @@ const ContactPage = () => {
                 <h3 className="text-xl font-semibold text-white mb-4">Acciones rápidas</h3>
                 <div className="space-y-4">
                   <a
-                    href="https://wa.me/593XXXXXXXXX"
+                    href="https://wa.me/593995048253"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-3 bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-lg transition-colors duration-200"
@@ -302,7 +302,7 @@ const ContactPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/593XXXXXXXXX"
+                href="https://wa.me/593995048253"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center space-x-2 bg-white text-primary-600 hover:bg-gray-100 px-8 py-4 rounded-xl font-semibold text-lg transition-colors duration-200"
