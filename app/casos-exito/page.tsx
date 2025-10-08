@@ -201,7 +201,7 @@ const SuccessCasesPage = () => {
                     <Star key={i} className="text-yellow-400 fill-current" size={20} />
                   ))}
                 </div>
-                <p className="text-gray-300 mb-6 leading-relaxed">"{testimonial.content}"</p>
+                <p className="text-gray-300 mb-6 leading-relaxed">&ldquo;{testimonial.content}&rdquo;</p>
                 <div className="flex items-center space-x-3">
                   <Image
                     src={testimonial.avatar}
