@@ -233,7 +233,7 @@ const ContactPage = () => {
                     <span>WhatsApp Directo</span>
                   </a>
                   <a
-                    href="https://calendly.com/tuusuario"
+                    href="https://calendly.com/brunocastillo4427/consulta-nexoia"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-3 bg-primary-600 hover:bg-primary-700 text-white px-4 py-3 rounded-lg transition-colors duration-200"
@@ -311,7 +311,7 @@ const ContactPage = () => {
                 <span>Contactar por WhatsApp</span>
               </a>
               <a
-                href="https://calendly.com/tuusuario"
+                href="https://calendly.com/brunocastillo4427/consulta-nexoia"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center space-x-2 bg-primary-800 hover:bg-primary-900 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors duration-200"

@@ -310,7 +310,7 @@ const AboutPage = () => {
                 <span>Contactar por WhatsApp</span>
               </a>
               <a
-                href="https://calendly.com/tuusuario"
+                href="https://calendly.com/brunocastillo4427/consulta-nexoia"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center space-x-2 bg-primary-800 hover:bg-primary-900 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors duration-200"

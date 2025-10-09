@@ -94,7 +94,7 @@ const HomePage = () => {
               </Link>
               
               <a
-                href="https://calendly.com/tuusuario"
+                href="https://calendly.com/brunocastillo4427/consulta-nexoia"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center space-x-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105"
@@ -220,7 +220,7 @@ const HomePage = () => {
                 <span>Contactar por WhatsApp</span>
               </a>
               <a
-                href="https://calendly.com/tuusuario"
+                href="https://calendly.com/brunocastillo4427/consulta-nexoia"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center space-x-2 bg-primary-800 hover:bg-primary-900 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors duration-200"
