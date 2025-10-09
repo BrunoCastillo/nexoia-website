@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { MessageCircle, Calendar, Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react'
+import emailjs from '@emailjs/browser'
 
 const ContactPage = () => {
   const [form_data, setFormData] = useState({
@@ -25,17 +26,40 @@ const ContactPage = () => {
     e.preventDefault()
     setIsLoading(true)
     
-    // Simular envío del formulario
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    
-    setIsSubmitted(true)
-    setIsLoading(false)
-    
-    // Resetear formulario después de 3 segundos
-    setTimeout(() => {
-      setIsSubmitted(false)
-      setFormData({ name: '', email: '', message: '' })
-    }, 3000)
+    try {
+      // Configurar EmailJS
+      const service_id = 'service_kgkm8fv'
+      const template_id = 'template_kwr1f2h'
+      const public_key = 'phDB7JUITnLJtt_VB'
+      
+      // Enviar email usando EmailJS
+      await emailjs.send(
+        service_id,
+        template_id,
+        {
+          from_name: form_data.name,
+          from_email: form_data.email,
+          message: form_data.message,
+          to_email: 'nexoiaec@gmail.com'
+        },
+        public_key
+      )
+      
+      setIsSubmitted(true)
+      setIsLoading(false)
+      
+      // Resetear formulario después de 3 segundos
+      setTimeout(() => {
+        setIsSubmitted(false)
+        setFormData({ name: '', email: '', message: '' })
+      }, 3000)
+      
+    } catch (error) {
+      console.error('Error enviando email:', error)
+      setIsLoading(false)
+      // Aquí podrías mostrar un mensaje de error al usuario
+      alert('Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.')
+    }
   }
 
   const contact_info = [
