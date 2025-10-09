@@ -210,7 +210,7 @@ const Footer = () => {
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-gray-400">
                 <Mail size={16} />
-                <span>hola@nexoia.com</span>
+                <span>nexoiaec@gmail.com</span>
               </div>
               <div className="flex items-center space-x-2 text-gray-400">
                 <MessageCircle size={16} />

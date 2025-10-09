@@ -42,7 +42,7 @@ const ContactPage = () => {
     {
       icon: Mail,
       title: 'Email',
-      value: 'hola@nexoia.com',
+      value: 'nexoiaec@gmail.com',
       description: 'Escríbenos para cualquier consulta'
     },
     {
