@@ -243,3 +243,7 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 ---
 
 **¡Tu sitio web de IA para Todos está listo para conquistar el mundo digital!** 🚀
+
+## Evaluaciones de capacitación
+
+El módulo de encuestas vive en la rama `feature/encuestas-capacitacion`. La configuración de Supabase, las rutas y el alta del primer administrador están en `docs/encuestas_capacitacion.md`.

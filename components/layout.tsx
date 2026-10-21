@@ -21,6 +21,7 @@ const Navbar = () => {
     { href: '/', label: 'Inicio' },
     { href: '/servicios', label: 'Servicios' },
     { href: '/casos-exito', label: 'Casos de Éxito' },
+    { href: '/encuestas/ia-finanzas-2026', label: 'Evaluación' },
     { href: '/sobre-nosotros', label: 'Sobre Nosotros' },
     { href: '/contacto', label: 'Contacto' },
   ]
@@ -201,6 +202,8 @@ const Footer = () => {
               <li><Link href="/casos-exito" className="text-gray-400 hover:text-white transition-colors">Casos de Éxito</Link></li>
               <li><Link href="/sobre-nosotros" className="text-gray-400 hover:text-white transition-colors">Sobre Nosotros</Link></li>
               <li><Link href="/contacto" className="text-gray-400 hover:text-white transition-colors">Contacto</Link></li>
+              <li><Link href="/encuestas/ia-finanzas-2026" className="text-gray-400 hover:text-white transition-colors">Evaluación</Link></li>
+              <li><Link href="/privacidad" className="text-gray-400 hover:text-white transition-colors">Privacidad</Link></li>
             </ul>
           </div>
 
