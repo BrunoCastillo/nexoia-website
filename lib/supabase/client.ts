@@ -19,7 +19,7 @@ export function get_public_config(): PublicConfig | null {
     url,
     anon_key,
     turnstile_site_key: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY?.trim() ?? '',
-    site_url: (process.env.NEXT_PUBLIC_SITE_URL?.trim() || 'https://nexoia-website.vercel.app').replace(/\/$/, ''),
+    site_url: (process.env.NEXT_PUBLIC_SITE_URL?.trim() || 'https://nexoiaec.vercel.app').replace(/\/$/, ''),
   }
 }
 

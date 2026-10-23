@@ -9,7 +9,7 @@ export function site_origin(): string {
   const configured = get_public_config()?.site_url
   if (configured) return configured
   if (typeof window !== 'undefined') return window.location.origin
-  return 'https://nexoia-website.vercel.app'
+  return 'https://nexoiaec.vercel.app'
 }
 
 export function build_public_survey_url(slug: string): string {

@@ -36,12 +36,12 @@ insert into public.admin_users (user_id, email, is_active)
 values ('UUID-DEL-USUARIO', 'nexoiaec@gmail.com', true);
 ```
 
-5. En Authentication > URL Configuration, agrega `https://nexoia-website.vercel.app/admin/acceso` y `http://localhost:3000/admin/acceso` si usarás la recuperación de contraseña.
+5. En Authentication > URL Configuration, agrega `https://nexoiaec.vercel.app/admin/acceso` y `http://localhost:3000/admin/acceso` si usarás la recuperación de contraseña.
 6. Instala la CLI de Supabase, entra al proyecto y publica las funciones sin exigir JWT, porque las llama el formulario público:
 
 ```bash
 supabase link --project-ref TU_PROJECT_REF
-supabase secrets set TURNSTILE_SECRET_KEY=tu-secreto RATE_LIMIT_SALT=un-valor-largo-aleatorio ALLOWED_ORIGIN=https://nexoia-website.vercel.app
+supabase secrets set TURNSTILE_SECRET_KEY=tu-secreto RATE_LIMIT_SALT=un-valor-largo-aleatorio ALLOWED_ORIGIN=https://nexoiaec.vercel.app
 supabase functions deploy submit-survey --no-verify-jwt
 supabase functions deploy subscribe-newsletter --no-verify-jwt
 supabase functions deploy unsubscribe-newsletter --no-verify-jwt
