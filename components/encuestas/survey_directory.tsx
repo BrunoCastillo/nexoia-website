@@ -33,7 +33,7 @@ export function SurveyDirectory() {
     <PublicShell>
       <div className="space-y-6">
         <h1 className="text-3xl font-bold text-white sm:text-4xl">Evaluaciones de capacitación</h1>
-        <p className="text-gray-300">Elige la capacitación que deseas evaluar. La participación es voluntaria y anónima.</p>
+        <p className="text-gray-300">Elige la capacitación que deseas evaluar. La participación es voluntaria. Cada evaluación indica qué datos te pide y para qué.</p>
         {state === 'loading' && <p className="text-gray-300">Cargando evaluaciones…</p>}
         {state === 'missing_config' && (
           <div className={card_class}>

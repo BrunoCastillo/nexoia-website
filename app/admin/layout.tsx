@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Administración de encuestas | NEXOIA',
+  title: 'Administración de encuestas | NexoIA',
   robots: { index: false, follow: false },
 }
 

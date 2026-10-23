@@ -13,8 +13,8 @@ export function GoogleFormPanel() {
     <PublicShell width="wide">
       <div className="space-y-6">
         <header className="space-y-3">
-          <p className="text-sm font-medium uppercase tracking-wide text-primary-300">Retroalimentación del curso</p>
-          <h1 className="text-3xl font-bold text-white sm:text-4xl">Inteligencia Artificial Aplicada a las Finanzas</h1>
+          <p className="text-sm font-semibold text-brand-yellow">Retroalimentación del curso</p>
+          <h1 className="text-display-2 text-white">Inteligencia Artificial Aplicada a las Finanzas</h1>
           <p className="text-gray-300">
             Universidad de Cuenca · ETAPA EP · 32 horas · Presencial · 11 sesiones · Instructor NexoIA
           </p>

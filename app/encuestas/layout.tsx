@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Evaluación de capacitación | NEXOIA',
+  title: 'Evaluación de capacitación | NexoIA',
   description: 'Evaluación y retroalimentación de las capacitaciones de NexoIA.',
 }
 
