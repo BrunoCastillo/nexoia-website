@@ -1,52 +1,62 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import type { Metadata, Viewport } from 'next'
 import './globals.css'
-import { Navbar, Footer } from '@/components/layout'
-
-const inter = Inter({ subsets: ['latin'] })
+import { font_display, font_sans } from './fonts'
+import { SiteHeader } from '@/components/site/header'
+import { SiteFooter } from '@/components/site/footer'
+import { SITE } from '@/lib/site'
 
 export const metadata: Metadata = {
-  title: 'NEXOIA | Soluciones con Inteligencia Artificial',
-  description: 'Impulsando la innovación con tecnología. Servicios accesibles de automatización, chatbots, generación de contenido y consultoría tecnológica.',
-  keywords: 'inteligencia artificial, IA, automatización, chatbots, generación de contenido, consultoría tecnológica, innovación',
-  authors: [{ name: 'NEXOIA' }],
+  metadataBase: new URL(SITE.url),
+  title: {
+    default: 'NexoIA | Capacitación en IA y automatización en Ecuador',
+    template: '%s | NexoIA',
+  },
+  description: SITE.description,
+  applicationName: SITE.name,
+  authors: [{ name: 'Bruno Castillo' }],
   openGraph: {
-    title: 'NEXOIA | Soluciones con Inteligencia Artificial',
-    description: 'Impulsando la innovación con tecnología. Servicios accesibles para todos.',
     type: 'website',
-    locale: 'es_ES',
+    locale: 'es_EC',
+    siteName: SITE.name,
+    title: 'NexoIA | Capacitación en IA y automatización en Ecuador',
+    description: SITE.description,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'NEXOIA | Soluciones con Inteligencia Artificial',
-    description: 'Impulsando la innovación con tecnología. Servicios accesibles para todos.',
+    title: 'NexoIA | Capacitación en IA y automatización en Ecuador',
+    description: SITE.description,
   },
-  robots: {
-    index: true,
-    follow: true,
+  robots: { index: true, follow: true },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180' }],
   },
+  manifest: '/site.webmanifest',
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export const viewport: Viewport = {
+  themeColor: '#23205C',
+}
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es">
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="manifest" href="/site.webmanifest" />
-      </head>
-      <body className={inter.className}>
-        <Navbar />
-        <main className="min-h-screen">
+    <html lang="es-EC" className={`${font_sans.variable} ${font_display.variable}`}>
+      <body>
+        <a
+          href="#contenido"
+          className="sr-only z-50 rounded-full bg-brand-yellow px-5 py-3 font-semibold text-ink focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+        >
+          Saltar al contenido
+        </a>
+        <SiteHeader />
+        <main id="contenido" tabIndex={-1} className="focus:outline-none">
           {children}
         </main>
-        <Footer />
+        <SiteFooter />
       </body>
     </html>
   )
