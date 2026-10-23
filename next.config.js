@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    domains: ['images.unsplash.com'],
+  async redirects() {
+    return [{ source: '/casos-exito', destination: '/proyectos', permanent: true }]
   },
 }
 

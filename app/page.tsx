@@ -1,239 +1,143 @@
-'use client'
-
-import { motion } from 'framer-motion'
-import { ArrowRight, MessageCircle, Calendar, Sparkles, Bot, Zap, PenTool, Lightbulb } from 'lucide-react'
+import type { Metadata } from 'next'
 import Link from 'next/link'
+import { Container } from '@/components/ui/container'
+import { Section, SectionHeading } from '@/components/ui/section'
+import { Tag } from '@/components/ui/card'
+import { CtaActions, CtaBanner } from '@/components/ui/cta_banner'
+import { HeroBoard } from '@/components/site/hero_board'
+import { ProcessSteps } from '@/components/site/process_steps'
+import { Monogram } from '@/components/site/monogram'
+import { TRAINING } from '@/lib/content'
+import { SITE, page_metadata } from '@/lib/site'
 
-const HomePage = () => {
-  const services_preview = [
-    {
-      icon: Bot,
-      title: 'Chatbots Inteligentes',
-      description: 'Asistentes virtuales personalizados',
-      color: 'from-blue-500 to-purple-600'
-    },
-    {
-      icon: Zap,
-      title: 'Automatización',
-      description: 'Ahorra tiempo en tareas repetitivas',
-      color: 'from-green-500 to-blue-600'
-    },
-    {
-      icon: PenTool,
-      title: 'Generación de Contenido',
-      description: 'Creatividad potenciada por IA',
-      color: 'from-purple-500 to-pink-600'
-    },
-    {
-      icon: Lightbulb,
-      title: 'Consultoría',
-      description: 'Asesoría para integrar IA',
-      color: 'from-orange-500 to-red-600'
-    }
-  ]
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900">
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl animate-float"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-teal-500/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-          {/* Líneas de energía como en el logo */}
-          <div className="absolute top-1/4 right-1/4 w-32 h-1 bg-gradient-to-r from-purple-400 to-teal-400 rounded-full opacity-60 animate-pulse"></div>
-          <div className="absolute bottom-1/3 left-1/3 w-24 h-1 bg-gradient-to-r from-teal-400 to-blue-400 rounded-full opacity-60 animate-pulse" style={{ animationDelay: '1s' }}></div>
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="space-y-8"
-          >
-            {/* Main Heading */}
-            <div className="space-y-4">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-500/10 to-teal-500/10 border border-purple-500/20 rounded-full px-4 py-2"
-              >
-                <Sparkles className="text-purple-400" size={20} />
-                <span className="text-purple-400 font-medium">Innovación Tecnológica</span>
-              </motion.div>
-              
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
-                <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-teal-400 bg-clip-text text-transparent">
-                  Impulsando la innovación
-                </span>
-                <br />
-                con tecnología
-              </h1>
-              
-              <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                Soluciones de inteligencia artificial accesibles para todos — Automatización, chatbots, generación de contenido y consultoría tecnológica.
-              </p>
-            </div>
-
-            {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-            >
-              <Link
-                href="#contacto"
-                className="group flex items-center space-x-2 bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-primary-500/25"
-              >
-                <span>Solicita tu asesoría gratuita</span>
-                <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
-              </Link>
-              
-              <a
-                href="https://calendly.com/brunocastillo4427/consulta-nexoia"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center space-x-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105"
-              >
-                <Calendar size={20} />
-                <span>Agendar una reunión</span>
-              </a>
-              
-              <a
-                href="https://wa.me/593995048253"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center space-x-2 bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105"
-              >
-                <MessageCircle size={20} />
-                <span>Escríbenos por WhatsApp</span>
-              </a>
-            </motion.div>
-
-            {/* Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto pt-16"
-            >
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-primary-400 mb-2">50+</div>
-                <div className="text-gray-400">Proyectos Completados</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-primary-400 mb-2">95%</div>
-                <div className="text-gray-400">Satisfacción del Cliente</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-primary-400 mb-2">24/7</div>
-                <div className="text-gray-400">Soporte Disponible</div>
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Services Preview */}
-      <section className="py-20 bg-dark-800/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Nuestros Servicios
-            </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Soluciones de IA diseñadas para impulsar tu negocio hacia el futuro
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services_preview.map((service, index) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group relative bg-dark-700/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-primary-500/50 transition-all duration-300 transform hover:scale-105"
-              >
-                <div className={`w-12 h-12 bg-gradient-to-r ${service.color} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                  <service.icon className="text-white" size={24} />
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-2">{service.title}</h3>
-                <p className="text-gray-400">{service.description}</p>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="text-center mt-12"
-          >
-            <Link
-              href="/servicios"
-              className="inline-flex items-center space-x-2 bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200"
-            >
-              <span>Ver todos los servicios</span>
-              <ArrowRight size={16} />
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary-600 to-primary-700">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="space-y-8"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-white">
-              ¿Listo para transformar tu negocio?
-            </h2>
-            <p className="text-xl text-primary-100 max-w-2xl mx-auto">
-              Comienza hoy mismo con una asesoría gratuita y descubre cómo la IA puede revolucionar tu empresa.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="https://wa.me/593995048253"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center space-x-2 bg-white text-primary-600 hover:bg-gray-100 px-8 py-4 rounded-xl font-semibold text-lg transition-colors duration-200"
-              >
-                <MessageCircle size={20} />
-                <span>Contactar por WhatsApp</span>
-              </a>
-              <a
-                href="https://calendly.com/brunocastillo4427/consulta-nexoia"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center space-x-2 bg-primary-800 hover:bg-primary-900 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors duration-200"
-              >
-                <Calendar size={20} />
-                <span>Agendar Reunión</span>
-              </a>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-    </div>
-  )
+export const metadata: Metadata = {
+  ...page_metadata({
+    title: 'Capacitación en IA y automatización en Ecuador',
+    description: SITE.description,
+    path: '/',
+  }),
+  title: { absolute: 'NexoIA | Capacitación en IA y automatización en Ecuador' },
 }
 
-export default HomePage
+export default function HomePage() {
+  return (
+    <>
+      <section aria-labelledby="inicio-titulo" className="on-indigo bg-brand-indigo text-white">
+        <Container className="pb-20 pt-8 sm:pb-24 sm:pt-12">
+          <div className="grid gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center lg:gap-16">
+            <div>
+              <h1 id="inicio-titulo" className="text-display-1">
+                Tu equipo, usando IA con criterio.
+              </h1>
+              <p className="mt-6 max-w-prose text-lead text-on-indigo">
+                Capacitación presencial y automatizaciones a medida para empresas e instituciones de Ecuador. Trabajamos desde Cuenca, con
+                tus procesos y tus herramientas.
+              </p>
+              <div className="mt-9">
+                <CtaActions on_indigo />
+              </div>
+            </div>
+            <HeroBoard />
+          </div>
+        </Container>
+      </section>
+
+      <section aria-label="Instituciones capacitadas" className="border-b border-line bg-paper">
+        <Container className="flex flex-wrap items-baseline gap-x-8 gap-y-2 py-7">
+          <p className="font-semibold text-muted">Capacitamos a equipos de</p>
+          <p className="font-display text-2xl font-bold">Universidad de Cuenca</p>
+          <p className="font-display text-2xl font-bold">ETAPA EP</p>
+        </Container>
+      </section>
+
+      <Section labelledby="servicios-titulo">
+        <SectionHeading id="servicios-titulo" title="Dos formas de trabajar con nosotros" />
+        <div className="grid gap-6 md:grid-cols-2">
+          <article aria-labelledby="linea-capacitacion" className="flex flex-col gap-4 rounded-card border border-line bg-surface p-6 sm:p-8">
+            <div>
+              <Tag tone="indigo">Capacitación</Tag>
+            </div>
+            <h3 id="linea-capacitacion" className="text-display-3">
+              Capacitación en IA aplicada
+            </h3>
+            <p className="text-muted">
+              Programas presenciales con prácticas sobre casos de trabajo. El primero, {TRAINING.title}, abarca presupuesto, ingresos,
+              anomalías, informes y agentes de análisis.
+            </p>
+            <ul className="flex flex-wrap gap-2" aria-label="Datos del programa">
+              <li>
+                <Tag>{TRAINING.hours}</Tag>
+              </li>
+              <li>
+                <Tag>{TRAINING.sessions}</Tag>
+              </li>
+              <li>
+                <Tag>{TRAINING.modality}</Tag>
+              </li>
+            </ul>
+            <p className="mt-auto pt-2">
+              <Link href="/capacitacion" className="link-underline font-semibold text-brand-indigo">
+                Ver el programa y el formato <span className="whitespace-nowrap">in-company</span>
+              </Link>
+            </p>
+          </article>
+
+          <article aria-labelledby="linea-automatizacion" className="flex flex-col gap-4 rounded-card border border-line bg-surface p-6 sm:p-8">
+            <div>
+              <Tag tone="mist">Automatización</Tag>
+            </div>
+            <h3 id="linea-automatizacion" className="text-display-3">
+              Automatización e IA a medida
+            </h3>
+            <p className="text-muted">
+              Agentes de WhatsApp, agendamiento con Google Calendar y Gmail, publicación en redes, reportes, dashboards y agentes que
+              analizan tus Excel. Al entregar, capacitamos a quien los va a usar.
+            </p>
+            <p className="mt-auto pt-2">
+              <Link href="/servicios" className="link-underline font-semibold text-brand-indigo">
+                Ver servicios
+              </Link>
+              <span className="text-muted"> o </span>
+              <Link href="/proyectos" className="link-underline font-semibold text-brand-indigo">
+                ver proyectos
+              </Link>
+            </p>
+          </article>
+        </div>
+      </Section>
+
+      <Section tone="surface" bordered labelledby="proceso-titulo">
+        <SectionHeading
+          id="proceso-titulo"
+          title="Cómo trabajamos"
+          lead="El mismo camino para un curso o una automatización: primero entender, después construir y al final dejar a tu equipo usándolo."
+        />
+        <ProcessSteps />
+      </Section>
+
+      <section aria-labelledby="quien-titulo" className="on-indigo bg-brand-indigo text-white">
+        <Container className="py-section">
+          <div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:gap-12">
+            <Monogram size="lg" />
+            <div className="max-w-prose">
+              <h2 id="quien-titulo" className="text-display-2">
+                Quién está detrás
+              </h2>
+              <p className="mt-4 text-lead text-on-indigo">
+                Bruno Castillo, ingeniero de sistemas con másteres en Inteligencia Artificial y en Gerencia de Proyectos. Más de 15 años en
+                tecnología, banca y medios de pago. Da las clases y construye las automatizaciones, desde Cuenca.
+              </p>
+              <p className="mt-6">
+                <Link href="/sobre-nosotros" className="link-underline font-semibold text-white">
+                  Conocer su trayectoria
+                </Link>
+              </p>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <CtaBanner />
+    </>
+  )
+}
