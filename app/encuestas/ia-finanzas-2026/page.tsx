@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { SurveyExperience } from '@/components/encuestas/survey_experience'
+import { GoogleFormPanel } from '@/components/encuestas/google_form_panel'
 
 export const metadata: Metadata = {
   title: 'Evaluación: IA aplicada a las finanzas | NEXOIA',
@@ -7,5 +7,5 @@ export const metadata: Metadata = {
 }
 
 export default function IaFinanzasSurveyPage() {
-  return <SurveyExperience slug="ia-finanzas-2026" />
+  return <GoogleFormPanel />
 }

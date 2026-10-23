@@ -4,12 +4,15 @@
 
 import { Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
+import { GoogleFormPanel } from '@/components/encuestas/google_form_panel'
 import { SurveyDirectory } from '@/components/encuestas/survey_directory'
 import { SurveyExperience } from '@/components/encuestas/survey_experience'
+import { FIRST_SURVEY_SLUG } from '@/lib/surveys/constants'
 
 function EncuestasRouter() {
   const slug = useSearchParams().get('curso')?.trim() ?? ''
   if (!slug) return <SurveyDirectory />
+  if (slug === FIRST_SURVEY_SLUG) return <GoogleFormPanel />
   return <SurveyExperience slug={slug} />
 }
 

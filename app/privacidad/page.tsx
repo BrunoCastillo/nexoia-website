@@ -16,7 +16,7 @@ export default function PrivacidadPage() {
         <p>Última actualización: 20 de octubre de 2026. Responsable: NexoIA. Contacto: {CONTACT_EMAIL}.</p>
         <section className="space-y-2">
           <h2 className="text-xl font-semibold text-white">Evaluaciones de capacitación</h2>
-          <p>Puedes completar una evaluación sin entregar tu nombre ni tu correo. Esas respuestas se guardan con un identificador aleatorio y no se relacionan con la suscripción comercial. Los comentarios abiertos son opcionales: no escribas datos que te identifiquen.</p>
+          <p>Puedes completar la evaluación en Google Forms sin entregar tu nombre ni tu correo. Las respuestas quedan en la cuenta de Google que administra NexoIA y no se relacionan con una suscripción comercial. Los comentarios abiertos son opcionales: no escribas datos que te identifiquen.</p>
           <p>La finalidad es mejorar las capacitaciones de NexoIA. Este formulario no es una evaluación académica oficial de la Universidad de Cuenca ni de otra institución, salvo que esa institución lo autorice de forma expresa.</p>
         </section>
         <section className="space-y-2">
@@ -27,7 +27,7 @@ export default function PrivacidadPage() {
         <section className="space-y-2">
           <h2 className="text-xl font-semibold text-white">Conservación y derechos</h2>
           <p>Las evaluaciones se conservan mientras sirvan para analizar y mejorar el programa. Las suscripciones se conservan hasta que canceles o pidas la eliminación. Puedes solicitar acceso, rectificación, eliminación, oposición o portabilidad escribiendo a {CONTACT_EMAIL}.</p>
-          <p>Los datos se almacenan en Supabase. Al crear el proyecto conviene elegir una región cercana. El acceso administrativo está limitado a cuentas autorizadas y las tablas sensibles no se pueden leer con la clave pública.</p>
+          <p>La evaluación se almacena en Google Forms. El acceso a esas respuestas está limitado a la cuenta de Google de NexoIA.</p>
         </section>
         <p>
           <Link href="/encuestas/ia-finanzas-2026" className="text-primary-300">Volver a la evaluación</Link>
