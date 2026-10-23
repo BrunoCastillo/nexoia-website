@@ -1,8 +1,12 @@
 // Enlace de la evaluación pública. La respuesta se guarda en Google Forms, sin Supabase.
+// NEXT_PUBLIC_GOOGLE_FORM_URL permite cambiar el formulario desde Vercel sin tocar el código.
+
+const DEFAULT_GOOGLE_FORM_URL =
+  'https://docs.google.com/forms/d/e/1FAIpQLSc7KeFcvpMV8mm7LzMbEiucul63-CPl-D4Xii5RVPkPOJPloQ/viewform'
 
 const configured_url = (process.env.NEXT_PUBLIC_GOOGLE_FORM_URL ?? '').trim()
 
-export const GOOGLE_FORM_VIEW_URL = configured_url
+export const GOOGLE_FORM_VIEW_URL = configured_url || DEFAULT_GOOGLE_FORM_URL
 
 export function to_google_form_embed_url(view_url: string): string {
   if (!view_url) return ''
